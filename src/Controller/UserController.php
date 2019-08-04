@@ -85,13 +85,16 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="user_show", methods={"GET"})
+     * @Route("/acces", name="user_show", methods={"GET"})
      */
     public function show(User $user): Response
-    {
-        return $this->render('user/show.html.twig', [
-            'user' => $user,
-        ]);
+    {$data=
+        [
+            'status' => 200,
+            'message' => 'désolé vous etes bloqué'
+        ];
+      
+        return new JsonResponse($data);
     }
 
     /**
@@ -102,14 +105,23 @@ class UserController extends AbstractController
         $values = json_decode($request->getContent());
 
         $bloq=$userRepo->findOneByUsername($values->username);
-        $bloq->setStatut("bloquer");
-        $bloq->setRoles(["ROLE_USERLOCK"]);
+       if($bloq->getStatut()=="bloquer" ){
+
+        $bloq->setStatut("actif");
+        $bloq->setRoles(["ROLE_USER"]);
+          
+          }
+       elseif($bloq->getStatut()=="actif")
+       {
+           $bloq->setStatut("bloquer");
+           $bloq->setRoles(["ROLE_USERLOCK"]);
+       }
 
         $entityManager->flush();
         $data=
         [
             'status' => 200,
-            'message' => 'message bloqué'
+            'message' => 'message bloqué/débloqué'
         ];
       
         return new JsonResponse($data);

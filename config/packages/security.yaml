@@ -17,6 +17,7 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         api:
+            http_basic: ~ 
             pattern: ^/api
             stateless: true
             anonymous: true
@@ -47,4 +48,5 @@ security:
          - { path: ^/api/register, roles: ROLE_ADMIN }
          - { path: ^/api/ajout, roles: ROLE_SUPER_ADMIN }
          - { path: ^/api/depot, roles: ROLE_CAISSIER }
+         - { path: ^/api/acces, roles: ROLE_USERLOCK }
 

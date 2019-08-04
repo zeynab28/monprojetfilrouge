@@ -31,7 +31,9 @@ class DepotController extends AbstractController
 
         $depot = new Depot();
         $depot->setDate(new \DateTime());
+        if($values->montant >= 75000){
         $depot->setMontant($values->montant);
+         }
         
         $data=json_decode($request->getContent(),true);
         $repo=$this->getDoctrine()->getRepository(Compte::class);

@@ -57,7 +57,7 @@ class PrestataireController extends AbstractController
         $comp->setPartenaire($prest);
 
         $entityManager = $this->getDoctrine()->getManager();
-      $entityManager->persist($user);
+        $entityManager->persist($user);
         $entityManager->persist($prest);
         $entityManager->persist($comp);
         $entityManager->flush();

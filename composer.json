@@ -22,6 +22,7 @@
         "symfony/maker-bundle": "^1.12",
         "symfony/monolog-bundle": "^3.1",
         "symfony/orm-pack": "*",
+        "symfony/phpunit-bridge": "^4.3",
         "symfony/process": "4.3.*",
         "symfony/security-bundle": "4.3.*",
         "symfony/serializer": "4.3.*",
