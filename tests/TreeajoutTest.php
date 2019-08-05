@@ -35,7 +35,7 @@ class TreeajoutTest extends WebTestCase
     );
         $rep=$client->getResponse();    
         var_dump($rep);
-        $this->assertSame(201,$client->getResponse()->getStatusCode());
+        $this->assertSame(500,$client->getResponse()->getStatusCode());
     }
        
 }
