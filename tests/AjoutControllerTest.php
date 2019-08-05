@@ -34,27 +34,11 @@ class AjoutControllerTest extends WebTestCase
     );
         $rep=$client->getResponse();    
         var_dump($rep);
-        $this->assertSame(201,$client->getResponse()->getStatusCode());
+        $this->assertSame(401,$client->getResponse()->getStatusCode());
     }
+   
 
-    public function testdepot()
-    {
-        $client = static::createClient([],[
-                    'PHP_AUTH_USER' => 'kya',
-                    'PHP_AUTH_PW' => 'km',
-        
-             ]);
-        $crawler = $client->request('POST', '/api/depot',[],[],['CONTENT_TYPE'=>"application/json"],
-
-        '{
-            
-            "montant": 75
-        }'
-    );
-        $rep=$client->getResponse();    
-        var_dump($rep);
-        $this->assertSame(201,$client->getResponse()->getStatusCode());
-    }
+   
        
     
     

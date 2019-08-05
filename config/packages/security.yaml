@@ -48,5 +48,5 @@ security:
          - { path: ^/api/register, roles: ROLE_ADMIN }
          - { path: ^/api/ajout, roles: ROLE_SUPER_ADMIN }
          - { path: ^/api/depot, roles: ROLE_CAISSIER }
-         - { path: ^/api/acces, roles: ROLE_USERLOCK }
+        
 

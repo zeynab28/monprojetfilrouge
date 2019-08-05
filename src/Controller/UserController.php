@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use FOS\RestBundle\Controller\FOSRestController;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -20,7 +21,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 /**
  * @Route("/api")
  */
-class UserController extends AbstractController
+class UserController extends FOSRestController
 {
 
     /**
@@ -28,49 +29,47 @@ class UserController extends AbstractController
      */
     public function register(Request $request, EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder, SerializerInterface $serializer, ValidatorInterface $validator,PrestataireRepository $repo)
     {
-        $values = json_decode($request->getContent());
-       
-        if(isset($values->username,$values->password)) {
+        
+        
             $utilisateur = new User();
-            $utilisateur->setUsername($values->username);
-            $utilisateur->setPassword($passwordEncoder->encodePassword($utilisateur, $values->password));
-            $utilisateur->setRoles($values->roles);
-            $utilisateur->setPrenom($values->prenom);
-            $utilisateur->setNom($values->nom);
-            $utilisateur->setTel($values->tel);
-            $utilisateur->setCni($values->cni);
-            $utilisateur->setAdresse($values->adresse);
-            $utilisateur->setEmail($values->email);
-            $utilisateur->setStatut($values->statut);
-            $repo=$this->getDoctrine()->getRepository(Prestataire::class);
-            $partenaires=$repo->find($values->partenaire);
-            $utilisateur->setPartenaire($partenaires);
-            
-            $errors = $validator->validate($utilisateur);
+            $form=$this->createForm(UserType::class , $utilisateur);
+            $form->handleRequest($request);
+            $data=$request->request->all();
+            $file= $request->files->all()['imageName'];
+            $form->submit($data);
 
-            if(count($errors)) {
-                $errors = $serializer->serialize($errors, 'json');
-                return new Response($errors, 500, [
-                    'Content-Type' => 'application/json'
-                ]);
-            }
+            if($form->isSubmitted() && $form->isValid())
+{
+            $utilisateur->setRoles(["ROLE_CAISSIER"]);
+            $utilisateur->setUpdatedAt(new \DateTime());
+            $utilisateur->setImageFile($file);
+            $utilisateur->setPassword($passwordEncoder->encodePassword($utilisateur,
+             $form->get('password')->getData()
+            )
+            );
+            
+          
+            
+            
+            
+            $entityManager=$this->getDoctrine()->getManager();
             $entityManager->persist($utilisateur);
             $entityManager->flush();
 
-            $data = [
-                'statu' => 201,
-                'messag' => 'L\'utilisateur a été créé'
-            ];
+            
 
-            return new JsonResponse($data, 201);
-        }
-        $data = [
-            'statu' => 500,
-            'messag' => 'Vous devez renseigner les clés username et password'
-        ];
-        return new JsonResponse($data, 500);
+      $dat=[
+          "statut"=>201,
+          "messages"=>"user crée"
+      ];
+      return new JsonResponse($dat);
 
-        
+    }  
+    $dat=[
+        "statut" => 500,
+        "messages" => "vous devez renseigner"
+    ];
+    return new JsonResponse($dat);
     }
      /**
      * @Route("/login_check", name="login", methods={"POST"})
