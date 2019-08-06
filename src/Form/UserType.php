@@ -18,9 +18,6 @@ use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class UserType extends AbstractType
 {
-    const ROLE_USER = 'USER';
-    const ROLE_CAISSIER = 'CAISSIER'; 
-    const ROLE_ADMIN = 'ADMIN';
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder

@@ -33,14 +33,13 @@ class CompteController extends AbstractController
      
         public function compte(Request $request, EntityManagerInterface $entityManager,PrestataireRepository $repo): Response
         {
+            $random=random_int(100000,999999);
             $dept = new Compte();
             $form = $this->createForm(CompteType::class, $dept);
             $data=json_decode($request->getContent(),true);
             $form->submit($data);
-            $partenaire=$repo->find($data["partenaire_id"]);
-            $dept->setPartenaire($partenaire);
+            $dept->setNumbcompte($random);
                 $entityManager = $this->getDoctrine()->getManager();
-                $entityManager->persist($partenaire);
                 $entityManager->persist($dept);
                 $entityManager->flush();
         
