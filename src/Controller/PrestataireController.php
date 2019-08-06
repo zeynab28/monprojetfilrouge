@@ -2,18 +2,20 @@
 
 namespace App\Controller;
 
-use App\Entity\Prestataire;
 use App\Entity\User;
 use App\Entity\Compte;
+use App\Form\UserType;
+use App\Form\CompteType;
+use App\Entity\Prestataire;
 use App\Form\PrestataireType;
+use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\PrestataireRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * @Route("/api")
@@ -26,40 +28,43 @@ class PrestataireController extends AbstractController
     public function ajout(Request $request, EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $random=random_int(100000,999999);
-        $values = json_decode($request->getContent());
-
-        $user= new User();
-        $user->setUsername($values->username);
-        $user->setPassword($passwordEncoder->encodePassword($user, $values->password));
-        $user->setRoles(array('ROLE_ADMIN'));
-        $user->setPrenom($values->prenom);
-        $user->setNom($values->nom);
-        $user->setTel($values->tel);
-        $user->setCni($values->cni);
-        $user->setAdresse($values->adresse);
-        $user->setEmail($values->email);
-        $user->setStatut($values->statut);
-      
-
         $prest= new Prestataire();
-        $prest->setNinea($values->ninea);
-        $prest->setRs($values->rs);
-        $prest->setNom($values->nom);
-        $prest->setAdresse($values->adresse);
-        $prest->setStatut($values->statut);
+        $form = $this->createForm(PrestataireType::class, $prest);
+        $data=$request->request->all();
+        $form->submit($data);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($prest);
+        $entityManager->flush();
 
-        $user->setPartenaire($prest);
+
+        $utilisateur = new User();
+        $form=$this->createForm(UserType::class , $utilisateur);
+        $form->handleRequest($request);
+        $data=$request->request->all();
+        $file= $request->files->all()['imageName'];
+        $form->submit($data);
+        $utilisateur->setRoles(["ROLE_ADMIN"]);
+        $utilisateur->setUpdatedAt(new \DateTime());
+        $utilisateur->setImageFile($file);
+        $utilisateur->setPassword($passwordEncoder->encodePassword($utilisateur,
+        $form->get('password')->getData()
+            )
+            );
+        $entityManager = $this->getDoctrine()->getManager();
+        $utilisateur->setPartenaire($prest);
+        $entityManager->persist($utilisateur);
+        $entityManager->flush();
+        
 
 
-        $comp= new Compte();
-        $comp->setNumbcompte($random);
-        $comp->setSolde($values->solde);
-        $comp->setPartenaire($prest);
+        $compt = new Compte();
+        $form = $this->createForm(CompteType::class, $compt);
+        $data=$request->request->all();
+        $form->submit($data);
+        $compt->setNumbcompte($random);
 
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($user);
-        $entityManager->persist($prest);
-        $entityManager->persist($comp);
+        $entityManager->persist($compt);
         $entityManager->flush();
 
         
