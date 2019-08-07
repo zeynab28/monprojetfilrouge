@@ -27,31 +27,34 @@ class DepotController extends AbstractController
     public function depot(Request $request,EntityManagerInterface $entityManager,CompteRepository $reposi ): Response
     {
        
-        $values = json_decode($request->getContent());
-
-        $depot = new Depot();
-        $depot->setDate(new \DateTime());
-        if($values->montant >= 75000){
-        $depot->setMontant($values->montant);
-         }
+       
         
-        $data=json_decode($request->getContent(),true);
+      
+       
+        
+        $depot = new Depot();
+        $form = $this->createForm(DepotType::class, $depot);
+        $data=$request->request->all();
+        $form->submit($data);
+        $depot->setDate(new \DateTime());
         $repo=$this->getDoctrine()->getRepository(Compte::class);
         $compt=$repo->find($data["compte"]);
         
         $compt->setSolde($compt->getSolde()+$depot->getMontant());
        
         $depot->setCompte($compt);
-        $repo=$this->getDoctrine()->getRepository(User::class);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($depot); 
+        $entityManager->persist($compt);
 
-        $caissier=$repo->find($data['user']);
-        $depot->setUser($caissier);
+        $entityManager->flush();
+       
+        
          
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($depot);
-            $entityManager->persist($compt);
-
-            $entityManager->flush();
+      
+       
+         
+         
         
         return new Response('Le depot a été effectuer',Response::HTTP_CREATED);
         

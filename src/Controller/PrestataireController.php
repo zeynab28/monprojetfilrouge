@@ -62,7 +62,7 @@ class PrestataireController extends AbstractController
         $data=$request->request->all();
         $form->submit($data);
         $compt->setNumbcompte($random);
-
+        $compt->setPartenaire($prest);
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($compt);
         $entityManager->flush();

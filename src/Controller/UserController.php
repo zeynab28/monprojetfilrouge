@@ -40,6 +40,7 @@ class UserController extends FOSRestController
 
             if($form->isSubmitted() && $form->isValid())
 {
+    
             $utilisateur->setRoles(["ROLE_CAISSIER"]);
             $utilisateur->setUpdatedAt(new \DateTime());
             $utilisateur->setImageFile($file);
