@@ -24,9 +24,10 @@ class UserFixtures extends Fixture
         $utilisateur->setPrenom("SEYNABOU");
         $utilisateur->setNom("NDIAYE");
         $utilisateur->setTel(778106222);
-        $utilisateur->setCni(1254896354);
         $utilisateur->setAdresse("Rufisque");
         $utilisateur->setEmail("ndiaye@gmail.com");
+        $utilisateur->setUpdatedAt(new \DateTime());
+       $utilisateur->setImageName("hftgtgg.jpg");
         $manager->persist($utilisateur);
         $manager->flush();
     }

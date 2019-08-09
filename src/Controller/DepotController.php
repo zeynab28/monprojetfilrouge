@@ -13,9 +13,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
-
-
-
 /**
  * @Route("/api")
  */
@@ -26,11 +23,6 @@ class DepotController extends AbstractController
     */
     public function depot(Request $request,EntityManagerInterface $entityManager,CompteRepository $reposi ): Response
     {
-       
-       
-        
-      
-       
         
         $depot = new Depot();
         $form = $this->createForm(DepotType::class, $depot);
@@ -47,14 +39,7 @@ class DepotController extends AbstractController
         $entityManager->persist($depot); 
         $entityManager->persist($compt);
 
-        $entityManager->flush();
-       
-        
-         
-      
-       
-         
-         
+        $entityManager->flush();  
         
         return new Response('Le depot a été effectuer',Response::HTTP_CREATED);
         
