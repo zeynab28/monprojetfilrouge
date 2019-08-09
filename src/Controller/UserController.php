@@ -130,7 +130,7 @@ public function __construct(UserPasswordEncoderInterface $passwordEncoder)
         
    # }
     /**
-     * @Route("/login", name="login", methods={"POST"})
+     * @Route("/login_check", name="login", methods={"POST"})
      * @param JWTEncoderInterface $JWTEncoder
      * @throws \Lexik\Bundle\JWTAuthenticationBundle\Exception\JWTEncodeFailureException
      */
