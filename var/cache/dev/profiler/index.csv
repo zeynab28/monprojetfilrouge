@@ -297,3 +297,9 @@ e455db,127.0.0.1,GET,http://localhost:8000/prestataire/liste,1567097204,,500
 3f2747,127.0.0.1,GET,http://localhost:8000/prestataire/liste,1567097354,6d7f62,200
 6d7f62,127.0.0.1,GET,http://localhost:8000/prestataire/liste,1567097354,,500
 78101e,127.0.0.1,GET,http://localhost:8000/prestataire/liste,1567097584,,200
+87553a,127.0.0.1,GET,http://127.0.0.1:8000/,1567103915,,404
+de2695,127.0.0.1,GET,http://127.0.0.1:8000/pdf,1567103928,b28425,200
+b28425,127.0.0.1,GET,http://127.0.0.1:8000/pdf,1567103928,,401
+bb5da6,127.0.0.1,GET,http://127.0.0.1:8000/pdf,1567104006,d7c5bd,200
+d7c5bd,127.0.0.1,GET,http://127.0.0.1:8000/pdf,1567104006,,500
+fd58c4,127.0.0.1,GET,http://localhost:8000/prestataire/liste,1567104233,,200

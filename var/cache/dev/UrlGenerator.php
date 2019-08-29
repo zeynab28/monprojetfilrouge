@@ -21,6 +21,7 @@ return [
     'compte_edit' => [['id'], ['_controller' => 'App\\Controller\\CompteController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/api']], [], []],
     'compte_delete' => [['id'], ['_controller' => 'App\\Controller\\CompteController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api']], [], []],
     'depot' => [[], ['_controller' => 'App\\Controller\\DepotController::depot'], [], [['text', '/api/depot']], [], []],
+    'pdf' => [[], ['_controller' => 'App\\Controller\\PdfController::index'], [], [['text', '/pdf']], [], []],
     'userataire_index' => [[], ['_controller' => 'App\\Controller\\PrestataireController::ajout'], [], [['text', '/prestataire/ajout']], [], []],
     'list_prestataire' => [[], ['_controller' => 'App\\Controller\\PrestataireController::index'], [], [['text', '/prestataire/liste']], [], []],
     'user_register' => [[], ['_controller' => 'App\\Controller\\UserController::register'], [], [['text', '/api/register']], [], []],

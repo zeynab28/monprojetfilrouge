@@ -15,6 +15,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/api' => [[['_route' => 'compte_index', '_controller' => 'App\\Controller\\CompteController::index'], null, ['GET' => 0], null, true, false, null]],
         '/api/compte' => [[['_route' => 'compte_new', '_controller' => 'App\\Controller\\CompteController::compte'], null, ['POST' => 0], null, false, false, null]],
+        '/pdf' => [[['_route' => 'pdf', '_controller' => 'App\\Controller\\PdfController::index'], null, null, null, false, false, null]],
         '/prestataire/ajout' => [[['_route' => 'userataire_index', '_controller' => 'App\\Controller\\PrestataireController::ajout'], null, ['POST' => 0], null, false, false, null]],
         '/prestataire/liste' => [[['_route' => 'list_prestataire', '_controller' => 'App\\Controller\\PrestataireController::index'], null, ['GET' => 0], null, false, false, null]],
     ],
