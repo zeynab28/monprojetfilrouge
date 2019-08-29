@@ -48,8 +48,8 @@ security:
         #- { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
         #- { path: ^/admin, roles: ROLE_ADMIN }
         #- { path: ^/profile, roles: ROLE_USER }
-         - { path: ^/api/register, roles: ROLE_ADMIN }
-         - { path: ^/api/ajout, roles: ROLE_SUPER_ADMIN }
-         - { path: ^/api/depot, roles: ROLE_CAISSIER }
+        #- { path: ^/api/register, roles: ROLE_ADMIN }
+        #- { path: ^/api/ajout, roles: ROLE_SUPER_ADMIN }
+        #- { path: ^/api/depot, roles: ROLE_CAISSIER }
         
 
