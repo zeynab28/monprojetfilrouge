@@ -20,10 +20,7 @@ class Compte
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $numbcompte;
+   
 
     /**
      * @ORM\Column(type="integer")
@@ -40,6 +37,15 @@ class Compte
      */
     private $depots;
 
+    /**
+     * @ORM\Column(type="bigint")
+     */
+    private $numbcompte;
+
+   
+
+    
+
     public function __construct()
     {
         $this->depots = new ArrayCollection();
@@ -48,18 +54,6 @@ class Compte
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getNumbcompte(): ?int
-    {
-        return $this->numbcompte;
-    }
-
-    public function setNumbcompte(int $numbcompte): self
-    {
-        $this->numbcompte = $numbcompte;
-
-        return $this;
     }
 
     public function getSolde(): ?int
@@ -116,4 +110,18 @@ class Compte
 
         return $this;
     }
+
+    public function getNumbcompte(): ?int
+    {
+        return $this->numbcompte;
+    }
+
+    public function setNumbcompte(int $numbcompte): self
+    {
+        $this->numbcompte = $numbcompte;
+
+        return $this;
+    }
+
+    
 }

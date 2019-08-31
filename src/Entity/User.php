@@ -112,12 +112,24 @@ class User implements UserInterface
      */
     private $transactions;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Compte")
+     */
+    private $compte;
+
+    
+
+  
+
+
+
    
 
     public function __construct()
     {
         $this->depots = new ArrayCollection();
         $this->transactions = new ArrayCollection();
+        
     }
 
     public function getId(): ?int
@@ -398,5 +410,23 @@ class User implements UserInterface
 
         return $this;
     }
+
+    public function getCompte(): ?Compte
+    {
+        return $this->compte;
+    }
+
+    public function setCompte(?Compte $compte): self
+    {
+        $this->compte = $compte;
+
+        return $this;
+    }
+
+   
+
+    
+
+    
 
 }

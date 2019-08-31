@@ -31,7 +31,8 @@ class DepotController extends AbstractController
         $depot->setDate(new \DateTime());
         $repo=$this->getDoctrine()->getRepository(Compte::class);
         $compt=$repo->find($data["compte"]);
-        
+        var_dump($data["compte"]);
+        //die();
         $compt->setSolde($compt->getSolde()+$depot->getMontant());
        
         $depot->setCompte($compt);

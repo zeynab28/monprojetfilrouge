@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Transaction index{% endblock %}
+
+{% block body %}
+    <h1>Transaction index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Telephone</th>
+                <th>Datetransaction</th>
+                <th>Codetransaction</th>
+                <th>Montant</th>
+                <th>Comenvoi</th>
+                <th>Comretrait</th>
+                <th>Cometat</th>
+                <th>Comsystem</th>
+                <th>Frais</th>
+                <th>Type</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.id }}</td>
+                <td>{{ transaction.nom }}</td>
+                <td>{{ transaction.prenom }}</td>
+                <td>{{ transaction.telephone }}</td>
+                <td>{{ transaction.datetransaction ? transaction.datetransaction|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ transaction.codetransaction }}</td>
+                <td>{{ transaction.montant }}</td>
+                <td>{{ transaction.comenvoi }}</td>
+                <td>{{ transaction.comretrait }}</td>
+                <td>{{ transaction.cometat }}</td>
+                <td>{{ transaction.comsystem }}</td>
+                <td>{{ transaction.frais }}</td>
+                <td>{{ transaction.type }}</td>
+                <td>
+                    <a href="{{ path('transaction_show', {'id': transaction.id}) }}">show</a>
+                    <a href="{{ path('transaction_edit', {'id': transaction.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('transaction_new') }}">Create new</a>
+{% endblock %}

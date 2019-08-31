@@ -3,8 +3,9 @@
 namespace App\Form;
 
 use App\Entity\User;
-use App\Entity\Prestataire;
+use App\Entity\Compte;
 
+use App\Entity\Prestataire;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
@@ -29,14 +30,17 @@ class UserType extends AbstractType
             ->add('adresse')
             ->add('cni')
             ->add('statut')
-            ->add('partenaire')
+            //->add('partenaire')
             ->add('email')
             ->add("imageFile", VichImageType:: class)
             ->add('partenaire', EntityType::class,[
                 'class'=> Prestataire::class,
                 'choice_label'=> 'partenaire_id'
             ])
-          
+            ->add('compte', EntityType::class,[
+                'class'=> Compte::class,
+                'choice_label'=> 'compte_id'
+            ])
         ;
     }
 

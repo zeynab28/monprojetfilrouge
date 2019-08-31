@@ -44,8 +44,8 @@ public function __construct(UserPasswordEncoderInterface $passwordEncoder)
             $file= $request->files->all()['imageName'];
             $form->submit($data);
 
-            if($form->isSubmitted() && $form->isValid())
-{
+//             if($form->isSubmitted() && $form->isValid())
+// {
     
             $utilisateur->setRoles(["ROLE_CAISSIER"]);
             $utilisateur->setUpdatedAt(new \DateTime());
@@ -60,19 +60,12 @@ public function __construct(UserPasswordEncoderInterface $passwordEncoder)
             $entityManager->flush();
 
             
+            return new Response('Le partenaire a été ajouté',Response::HTTP_CREATED);
 
-      $dat=[
-          "statut"=>201,
-          "messages"=>"user crée"
-      ];
-      return new JsonResponse($dat);
+     
 
-    }  
-    $dat=[
-        "statut" => 500,
-        "messages" => "vous devez renseigner"
-    ];
-    return new JsonResponse($dat);
+   // }  
+    
     }
     // /**
     // * @Route("/login_check", name="login", methods={"POST"})

@@ -12,10 +12,10 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
             'properties' => [
                 [
                     'id',
-                    'numbcompte',
                     'solde',
                     'partenaire',
                     'depots',
+                    'numbcompte',
                 ],
             ],
         ],

@@ -9,6 +9,7 @@ use App\Form\CompteType;
 use App\Entity\Prestataire;
 use App\Form\PrestataireType;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\TarifsRepository;
 use App\Repository\PrestataireRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -66,8 +67,6 @@ class PrestataireController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($compt);
         $entityManager->flush();
-
-        
           
         return new Response('Le partenaire a été ajouté',Response::HTTP_CREATED); 
     }
