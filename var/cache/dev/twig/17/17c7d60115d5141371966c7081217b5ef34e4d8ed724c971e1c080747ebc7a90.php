@@ -160,6 +160,6 @@ class __TwigTemplate_dc2c374b6952e9b011c48a0f076037b9ce9aa01f349c5ec25e2a6471632
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: profiler_url, name: 'time', status: status_color }) }}
 {% endblock %}
-", "@WebProfiler/Collector/memory.html.twig", "/home/seynabou/Documents/neldamoney_solo/vendor/symfony/web-profiler-bundle/Resources/views/Collector/memory.html.twig");
+", "@WebProfiler/Collector/memory.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/vendor/symfony/web-profiler-bundle/Resources/views/Collector/memory.html.twig");
     }
 }

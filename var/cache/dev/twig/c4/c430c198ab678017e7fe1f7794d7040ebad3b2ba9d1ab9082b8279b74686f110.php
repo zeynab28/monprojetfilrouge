@@ -375,6 +375,6 @@ class __TwigTemplate_f3ad76e10c365dc38d1ddf18d14c5e311ab455d67bb4b0086dafebe06e9
 
 </body>
 </html>
-", "@ApiPlatform/SwaggerUi/index.html.twig", "/home/seynabou/Documents/neldamoney_solo/vendor/api-platform/core/src/Bridge/Symfony/Bundle/Resources/views/SwaggerUi/index.html.twig");
+", "@ApiPlatform/SwaggerUi/index.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/vendor/api-platform/core/src/Bridge/Symfony/Bundle/Resources/views/SwaggerUi/index.html.twig");
     }
 }

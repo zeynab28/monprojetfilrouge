@@ -268,6 +268,6 @@ class __TwigTemplate_70b6a2231289452bf834b09b2459ced3052c840ee059482b68a56dcc23b
     {%- set label = label|trans|default(label) -%}
     {{- block('form_label') -}}
 {%- endblock -%}
-", "@VichUploader/Form/fields.html.twig", "/home/seynabou/Documents/neldamoney_solo/vendor/vich/uploader-bundle/Resources/views/Form/fields.html.twig");
+", "@VichUploader/Form/fields.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/vendor/vich/uploader-bundle/Resources/views/Form/fields.html.twig");
     }
 }

@@ -204,6 +204,6 @@ class __TwigTemplate_cd956b1e88d1daf6f1f27485567fa62798b0b6097e62757133268454071
         })|raw }}
     </div>
 {% endif %}
-", "@Twig/Exception/trace.html.twig", "/home/seynabou/Documents/neldamoney_solo/vendor/symfony/twig-bundle/Resources/views/Exception/trace.html.twig");
+", "@Twig/Exception/trace.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/vendor/symfony/twig-bundle/Resources/views/Exception/trace.html.twig");
     }
 }

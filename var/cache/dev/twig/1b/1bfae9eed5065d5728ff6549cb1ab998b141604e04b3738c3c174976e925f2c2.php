@@ -135,6 +135,6 @@ class __TwigTemplate_779439443d0ec8b1c7bfb85b1f727ccd947cefe7c4fd7e2fcd067ad63ec
 .exception-message-wrapper .container {
     min-height: auto;
 }
-", "@WebProfiler/Collector/exception.css.twig", "/home/seynabou/Documents/neldamoney_solo/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
+", "@WebProfiler/Collector/exception.css.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
     }
 }

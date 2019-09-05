@@ -133,6 +133,6 @@ class __TwigTemplate_32f28cc1e8b94be4302b7469da768e50778da66de3eec94dd635fafdcd7
 
     <a href=\"{{ path('depot_index') }}\">back to list</a>
 {% endblock %}
-", "depot/new.html.twig", "/home/seynabou/my-symfony-api/monprojetfilrouge/templates/depot/new.html.twig");
+", "depot/new.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/depot/new.html.twig");
     }
 }

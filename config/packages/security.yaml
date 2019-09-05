@@ -1,39 +1,40 @@
 security:
     encoders:
-        App\Entity\User: 
-            algorithm: argon2i
-            
+        App\Entity\User:
+            algorithm: auto
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         # used to reload user from session & other features (e.g. switch_user)
-        # app_user_provider:
-        database:
+        app_user_provider:
             entity:
                 class: App\Entity\User
-                property: username           
-        # used to reload user from session &git other features (e.g. switch_user)
+                property: username
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        # main:
-        #     json_login:
-        #         check_path: /api/login_check
-        api:
-            http_basic: ~ 
-            pattern: ^/api
+
+        login:
+            pattern:  ^/api/login
             stateless: true
             anonymous: true
             json_login:
-                # ici l'authentification se fait par(generation de token)
-                check_path: /api/login_check
-                # gere une bonne authentification
-                success_handler: lexik_jwt_authentication.handler.authentication_success
-                # gere une mauvaise connexion (mauvais identifiants,etc)
-                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+                check_path:               /api/login_check
+                success_handler:          lexik_jwt_authentication.handler.authentication_success
+                failure_handler:          lexik_jwt_authentication.handler.authentication_failure
+        api:
+            http_basic : ~
+            pattern:   ^/api
+            stateless: true
             guard:
                 authenticators:
-                    - lexik_jwt_authentication.jwt_token_authenticator
+                    - lexik_jwt_authentication.jwt_token_authenticator        
+    
+        main:
+            anonymous: true
+            json_login:
+                check_path: /api/login_check
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
@@ -44,12 +45,9 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        #- { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        #- { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
-        #- { path: ^/admin, roles: ROLE_ADMIN }
-        #- { path: ^/profile, roles: ROLE_USER }
-        #- { path: ^/api/register, roles: ROLE_ADMIN }
-        #- { path: ^/api/ajout, roles: ROLE_SUPER_ADMIN }
-        #- { path: ^/api/depot, roles: ROLE_CAISSIER }
-        
-
+        #- { path: ^/api/super, roles: ROLE_SUPER }
+        #- { path: ^/api/admin, roles: ROLE_ADMIN }
+        #- { path: ^/api/user, roles: ROLE_USER }
+        #- { path: ^/api/caissier,roles: ROLE_CAISSIER }
+         - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+         - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }

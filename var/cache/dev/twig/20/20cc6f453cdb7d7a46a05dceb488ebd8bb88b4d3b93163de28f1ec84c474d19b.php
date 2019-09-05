@@ -173,6 +173,6 @@ class __TwigTemplate_c4d865c45894490cd3cb48fb58080e6230f9f0858fb0cf0d43b5dce56a4
         {% block javascripts %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/home/seynabou/my-symfony-api/monprojetfilrouge/templates/base.html.twig");
+", "base.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/base.html.twig");
     }
 }

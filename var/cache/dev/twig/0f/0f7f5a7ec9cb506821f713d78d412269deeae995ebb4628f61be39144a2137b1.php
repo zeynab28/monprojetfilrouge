@@ -81,6 +81,6 @@ class __TwigTemplate_32acbea684722d98cc8f15d0f09660d3f64c7a278a526513d67ac18204d
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ compte.id) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "compte/_delete_form.html.twig", "/home/seynabou/my-symfony-api/monprojetfilrouge/templates/compte/_delete_form.html.twig");
+", "compte/_delete_form.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/compte/_delete_form.html.twig");
     }
 }

@@ -291,6 +291,6 @@ class __TwigTemplate_0520846a70810aa09d61e061de70c56286e3647f2f8358382b4a549c015
         </tbody>
     </table>
 {% endblock %}
-", "@VichUploader/Collector/mapping_collector.html.twig", "/home/seynabou/Documents/neldamoney_solo/vendor/vich/uploader-bundle/Resources/views/Collector/mapping_collector.html.twig");
+", "@VichUploader/Collector/mapping_collector.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/vendor/vich/uploader-bundle/Resources/views/Collector/mapping_collector.html.twig");
     }
 }

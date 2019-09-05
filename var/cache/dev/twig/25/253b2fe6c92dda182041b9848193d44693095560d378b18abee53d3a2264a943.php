@@ -133,6 +133,6 @@ class __TwigTemplate_94ff9fdfb3b258a6abca41a3b4542ea74dca09d55d34728b933c1a8a1c7
 
     <a href=\"{{ path('user_index') }}\">back to list</a>
 {% endblock %}
-", "user/new.html.twig", "/home/seynabou/my-symfony-api/monprojetfilrouge/templates/user/new.html.twig");
+", "user/new.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/user/new.html.twig");
     }
 }

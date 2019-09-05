@@ -227,6 +227,6 @@ class __TwigTemplate_6eda009510e2235895eb868f8acdf070d93d4a08929471a114f1fdb65a3
         {{ include('@Twig/base_js.html.twig') }}
     </body>
 </html>
-", "@Twig/layout.html.twig", "/home/seynabou/Documents/neldamoney_solo/vendor/symfony/twig-bundle/Resources/views/layout.html.twig");
+", "@Twig/layout.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/vendor/symfony/twig-bundle/Resources/views/layout.html.twig");
     }
 }

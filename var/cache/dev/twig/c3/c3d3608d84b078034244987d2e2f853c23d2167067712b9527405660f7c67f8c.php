@@ -1828,6 +1828,6 @@ class __TwigTemplate_71c2814e43fdc02a41da0c02b4d6c42dc58d439decb2a6e120135187e63
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/home/seynabou/Documents/neldamoney_solo/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

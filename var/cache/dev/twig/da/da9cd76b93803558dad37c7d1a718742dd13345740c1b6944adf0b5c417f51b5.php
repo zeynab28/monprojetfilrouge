@@ -133,6 +133,6 @@ class __TwigTemplate_e2556ef339732b0490714c7efef11762e30fa4c89982d7bf1a553aa2403
 
     <a href=\"{{ path('compte_index') }}\">back to list</a>
 {% endblock %}
-", "compte/new.html.twig", "/home/seynabou/my-symfony-api/monprojetfilrouge/templates/compte/new.html.twig");
+", "compte/new.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/compte/new.html.twig");
     }
 }

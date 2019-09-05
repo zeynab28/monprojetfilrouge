@@ -97,6 +97,6 @@ class __TwigTemplate_aae8c65868430813f89d79d6e0da85525cdb3a484c747708b436a73bde8
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "/home/seynabou/Documents/neldamoney_solo/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
     }
 }

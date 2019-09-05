@@ -133,6 +133,6 @@ class __TwigTemplate_9c4d91e84e9779d4faea0c43ece1b0bddea368b832763b7926b40c5e4de
 
     <a href=\"{{ path('profil_index') }}\">back to list</a>
 {% endblock %}
-", "profil/new.html.twig", "/home/seynabou/my-symfony-api/monprojetfilrouge/templates/profil/new.html.twig");
+", "profil/new.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/profil/new.html.twig");
     }
 }

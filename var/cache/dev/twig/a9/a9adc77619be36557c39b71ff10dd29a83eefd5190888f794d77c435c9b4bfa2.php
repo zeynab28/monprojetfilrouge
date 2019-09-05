@@ -261,6 +261,6 @@ class __TwigTemplate_1e46dc5fd46389d108953759d01ae3b907031a99bdabb44260fe6215025
 
     <a href=\"{{ path('user_new') }}\">Create new</a>
 {% endblock %}
-", "user/index.html.twig", "/home/seynabou/my-symfony-api/monprojetfilrouge/templates/user/index.html.twig");
+", "user/index.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/user/index.html.twig");
     }
 }

@@ -37,6 +37,15 @@ class PrestataireController extends AbstractController
         $entityManager->persist($prest);
         $entityManager->flush();
 
+        $compt = new Compte();
+        $form = $this->createForm(CompteType::class, $compt);
+        $data=$request->request->all();
+        $form->submit($data);
+        $compt->setNumbcompte($random);
+        $compt->setPartenaire($prest);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($compt);
+        $entityManager->flush();
 
         $utilisateur = new User();
         $form=$this->createForm(UserType::class , $utilisateur);
@@ -53,20 +62,13 @@ class PrestataireController extends AbstractController
             );
         $entityManager = $this->getDoctrine()->getManager();
         $utilisateur->setPartenaire($prest);
+        $utilisateur->setCompte($compt);
         $entityManager->persist($utilisateur);
         $entityManager->flush();
         
 
 
-        $compt = new Compte();
-        $form = $this->createForm(CompteType::class, $compt);
-        $data=$request->request->all();
-        $form->submit($data);
-        $compt->setNumbcompte($random);
-        $compt->setPartenaire($prest);
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($compt);
-        $entityManager->flush();
+       
           
         return new Response('Le partenaire a été ajouté',Response::HTTP_CREATED); 
     }

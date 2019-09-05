@@ -97,62 +97,104 @@ class __TwigTemplate_21460865d69a207d9899ad48bac58fad0e8920484b4475ff718a7f558bc
         echo "</td>
             </tr>
             <tr>
-                <th>Agence</th>
+                <th>Nom</th>
                 <td>";
         // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 16, $this->source); })()), "agence", [], "any", false, false, false, 16), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 16, $this->source); })()), "nom", [], "any", false, false, false, 16), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>Frais</th>
+                <th>Prenom</th>
                 <td>";
         // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 20, $this->source); })()), "frais", [], "any", false, false, false, 20), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 20, $this->source); })()), "prenom", [], "any", false, false, false, 20), "html", null, true);
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>";
+        // line 24
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 24, $this->source); })()), "telephone", [], "any", false, false, false, 24), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Datetransaction</th>
                 <td>";
-        // line 24
-        ((twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 24, $this->source); })()), "datetransaction", [], "any", false, false, false, 24)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 24, $this->source); })()), "datetransaction", [], "any", false, false, false, 24), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+        // line 28
+        ((twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 28, $this->source); })()), "datetransaction", [], "any", false, false, false, 28)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 28, $this->source); })()), "datetransaction", [], "any", false, false, false, 28), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
         echo "</td>
             </tr>
             <tr>
                 <th>Codetransaction</th>
                 <td>";
-        // line 28
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 28, $this->source); })()), "codetransaction", [], "any", false, false, false, 28), "html", null, true);
+        // line 32
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 32, $this->source); })()), "codetransaction", [], "any", false, false, false, 32), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Montant</th>
                 <td>";
-        // line 32
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 32, $this->source); })()), "montant", [], "any", false, false, false, 32), "html", null, true);
+        // line 36
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 36, $this->source); })()), "montant", [], "any", false, false, false, 36), "html", null, true);
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Comenvoi</th>
+                <td>";
+        // line 40
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 40, $this->source); })()), "comenvoi", [], "any", false, false, false, 40), "html", null, true);
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Comretrait</th>
+                <td>";
+        // line 44
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 44, $this->source); })()), "comretrait", [], "any", false, false, false, 44), "html", null, true);
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Cometat</th>
+                <td>";
+        // line 48
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 48, $this->source); })()), "cometat", [], "any", false, false, false, 48), "html", null, true);
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Comsystem</th>
+                <td>";
+        // line 52
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 52, $this->source); })()), "comsystem", [], "any", false, false, false, 52), "html", null, true);
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Frais</th>
+                <td>";
+        // line 56
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 56, $this->source); })()), "frais", [], "any", false, false, false, 56), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Type</th>
                 <td>";
-        // line 36
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 36, $this->source); })()), "type", [], "any", false, false, false, 36), "html", null, true);
+        // line 60
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 60, $this->source); })()), "type", [], "any", false, false, false, 60), "html", null, true);
         echo "</td>
             </tr>
         </tbody>
     </table>
 
     <a href=\"";
-        // line 41
+        // line 65
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("transaction_index");
         echo "\">back to list</a>
 
     <a href=\"";
-        // line 43
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("transaction_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 43, $this->source); })()), "id", [], "any", false, false, false, 43)]), "html", null, true);
+        // line 67
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("transaction_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["transaction"]) || array_key_exists("transaction", $context) ? $context["transaction"] : (function () { throw new RuntimeError('Variable "transaction" does not exist.', 67, $this->source); })()), "id", [], "any", false, false, false, 67)]), "html", null, true);
         echo "\">edit</a>
 
     ";
-        // line 45
+        // line 69
         echo twig_include($this->env, $context, "transaction/_delete_form.html.twig");
         echo "
 ";
@@ -176,7 +218,7 @@ class __TwigTemplate_21460865d69a207d9899ad48bac58fad0e8920484b4475ff718a7f558bc
 
     public function getDebugInfo()
     {
-        return array (  156 => 45,  151 => 43,  146 => 41,  138 => 36,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  198 => 69,  193 => 67,  188 => 65,  180 => 60,  173 => 56,  166 => 52,  159 => 48,  152 => 44,  145 => 40,  138 => 36,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -195,12 +237,16 @@ class __TwigTemplate_21460865d69a207d9899ad48bac58fad0e8920484b4475ff718a7f558bc
                 <td>{{ transaction.id }}</td>
             </tr>
             <tr>
-                <th>Agence</th>
-                <td>{{ transaction.agence }}</td>
+                <th>Nom</th>
+                <td>{{ transaction.nom }}</td>
             </tr>
             <tr>
-                <th>Frais</th>
-                <td>{{ transaction.frais }}</td>
+                <th>Prenom</th>
+                <td>{{ transaction.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ transaction.telephone }}</td>
             </tr>
             <tr>
                 <th>Datetransaction</th>
@@ -215,6 +261,26 @@ class __TwigTemplate_21460865d69a207d9899ad48bac58fad0e8920484b4475ff718a7f558bc
                 <td>{{ transaction.montant }}</td>
             </tr>
             <tr>
+                <th>Comenvoi</th>
+                <td>{{ transaction.comenvoi }}</td>
+            </tr>
+            <tr>
+                <th>Comretrait</th>
+                <td>{{ transaction.comretrait }}</td>
+            </tr>
+            <tr>
+                <th>Cometat</th>
+                <td>{{ transaction.cometat }}</td>
+            </tr>
+            <tr>
+                <th>Comsystem</th>
+                <td>{{ transaction.comsystem }}</td>
+            </tr>
+            <tr>
+                <th>Frais</th>
+                <td>{{ transaction.frais }}</td>
+            </tr>
+            <tr>
                 <th>Type</th>
                 <td>{{ transaction.type }}</td>
             </tr>
@@ -227,6 +293,6 @@ class __TwigTemplate_21460865d69a207d9899ad48bac58fad0e8920484b4475ff718a7f558bc
 
     {{ include('transaction/_delete_form.html.twig') }}
 {% endblock %}
-", "transaction/show.html.twig", "/home/seynabou/Documents/neldamoney_solo/templates/transaction/show.html.twig");
+", "transaction/show.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/transaction/show.html.twig");
     }
 }

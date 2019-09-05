@@ -212,6 +212,6 @@ class __TwigTemplate_c66015229a9049c15be0aa6d33b97706a45fe1a3727fc01d77ac9777b42
 
     <a href=\"{{ path('depot_new') }}\">Create new</a>
 {% endblock %}
-", "depot/index.html.twig", "/home/seynabou/my-symfony-api/monprojetfilrouge/templates/depot/index.html.twig");
+", "depot/index.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/depot/index.html.twig");
     }
 }

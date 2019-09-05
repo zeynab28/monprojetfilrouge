@@ -107,15 +107,17 @@ class User implements UserInterface
      */
     private $updatedAt;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Transaction", mappedBy="user")
-     */
-    private $transactions;
+    
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Compte")
      */
     private $compte;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Transactions", mappedBy="user")
+     */
+    private $transactions;
 
     
 
@@ -161,7 +163,7 @@ class User implements UserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        // $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
     }
@@ -380,36 +382,7 @@ class User implements UserInterface
       return $this;
     }
 
-    /**
-     * @return Collection|Transaction[]
-     */
-    public function getTransactions(): Collection
-    {
-        return $this->transactions;
-    }
-
-    public function addTransaction(Transaction $transaction): self
-    {
-        if (!$this->transactions->contains($transaction)) {
-            $this->transactions[] = $transaction;
-            $transaction->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeTransaction(Transaction $transaction): self
-    {
-        if ($this->transactions->contains($transaction)) {
-            $this->transactions->removeElement($transaction);
-            // set the owning side to null (unless already changed)
-            if ($transaction->getUser() === $this) {
-                $transaction->setUser(null);
-            }
-        }
-
-        return $this;
-    }
+    
 
     public function getCompte(): ?Compte
     {
@@ -419,6 +392,37 @@ class User implements UserInterface
     public function setCompte(?Compte $compte): self
     {
         $this->compte = $compte;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Transactions[]
+     */
+    public function getTransactions(): Collection
+    {
+        return $this->transactions;
+    }
+
+    public function addTransaction(Transactions $transaction): self
+    {
+        if (!$this->transactions->contains($transaction)) {
+            $this->transactions[] = $transaction;
+            $transaction->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTransaction(Transactions $transaction): self
+    {
+        if ($this->transactions->contains($transaction)) {
+            $this->transactions->removeElement($transaction);
+            // set the owning side to null (unless already changed)
+            if ($transaction->getUser() === $this) {
+                $transaction->setUser(null);
+            }
+        }
 
         return $this;
     }

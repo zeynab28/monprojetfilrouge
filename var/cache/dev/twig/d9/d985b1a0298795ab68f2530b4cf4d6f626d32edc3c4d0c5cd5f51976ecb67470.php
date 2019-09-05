@@ -212,6 +212,6 @@ class __TwigTemplate_7422ad7a80ebeabe4c6ae827b2c812309e9b52de0484be46250c843dca5
 
     <a href=\"{{ path('compte_new') }}\">Create new</a>
 {% endblock %}
-", "compte/index.html.twig", "/home/seynabou/my-symfony-api/monprojetfilrouge/templates/compte/index.html.twig");
+", "compte/index.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/compte/index.html.twig");
     }
 }

@@ -140,6 +140,6 @@ class __TwigTemplate_00d6cabd558140e6b080da8390e22b6db11ad3d00cb57cc97d99c34b027
 
     {{ include('user/_delete_form.html.twig') }}
 {% endblock %}
-", "user/edit.html.twig", "/home/seynabou/my-symfony-api/monprojetfilrouge/templates/user/edit.html.twig");
+", "user/edit.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/user/edit.html.twig");
     }
 }

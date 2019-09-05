@@ -100,11 +100,11 @@ class __TwigTemplate_47885641158718f91b38b7d067d5cab8c7a82b1429acd9fa5f53d0d7bc3
     <ul>
         <li>Your controller at <code><a href=\"";
         // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/home/seynabou/Documents/neldamoney_solo/src/Controller/PdfController.php", 0), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/home/seynabou/my-symfony-api/monprojetfilrouge/src/Controller/PdfController.php", 0), "html", null, true);
         echo "\">src/Controller/PdfController.php</a></code></li>
         <li>Your template at <code><a href=\"";
         // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/home/seynabou/Documents/neldamoney_solo/templates/pdf/index.html.twig", 0), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/home/seynabou/my-symfony-api/monprojetfilrouge/templates/pdf/index.html.twig", 0), "html", null, true);
         echo "\">templates/pdf/index.html.twig</a></code></li>
     </ul>
 </div>
@@ -149,11 +149,11 @@ class __TwigTemplate_47885641158718f91b38b7d067d5cab8c7a82b1429acd9fa5f53d0d7bc3
 
     This friendly message is coming from:
     <ul>
-        <li>Your controller at <code><a href=\"{{ '/home/seynabou/Documents/neldamoney_solo/src/Controller/PdfController.php'|file_link(0) }}\">src/Controller/PdfController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ '/home/seynabou/Documents/neldamoney_solo/templates/pdf/index.html.twig'|file_link(0) }}\">templates/pdf/index.html.twig</a></code></li>
+        <li>Your controller at <code><a href=\"{{ '/home/seynabou/my-symfony-api/monprojetfilrouge/src/Controller/PdfController.php'|file_link(0) }}\">src/Controller/PdfController.php</a></code></li>
+        <li>Your template at <code><a href=\"{{ '/home/seynabou/my-symfony-api/monprojetfilrouge/templates/pdf/index.html.twig'|file_link(0) }}\">templates/pdf/index.html.twig</a></code></li>
     </ul>
 </div>
 {% endblock %}
-", "pdf/index.html.twig", "/home/seynabou/Documents/neldamoney_solo/templates/pdf/index.html.twig");
+", "pdf/index.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/pdf/index.html.twig");
     }
 }

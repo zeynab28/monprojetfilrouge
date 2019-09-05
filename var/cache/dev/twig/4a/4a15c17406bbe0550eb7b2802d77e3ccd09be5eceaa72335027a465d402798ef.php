@@ -205,6 +205,6 @@ class __TwigTemplate_cdeaebf3207a0f8f72cd4c5a36ae0cf5b26ab3630014cc647533acede4e
 
     <a href=\"{{ path('profil_new') }}\">Create new</a>
 {% endblock %}
-", "profil/index.html.twig", "/home/seynabou/my-symfony-api/monprojetfilrouge/templates/profil/index.html.twig");
+", "profil/index.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/profil/index.html.twig");
     }
 }

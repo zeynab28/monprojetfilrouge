@@ -222,6 +222,6 @@ class __TwigTemplate_b823d506550f0a71a175c6fc5ad5cb699fd936f38e94550f8d264e1695f
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/exception.html.twig", "/home/seynabou/Documents/neldamoney_solo/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
+", "@WebProfiler/Collector/exception.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
     }
 }

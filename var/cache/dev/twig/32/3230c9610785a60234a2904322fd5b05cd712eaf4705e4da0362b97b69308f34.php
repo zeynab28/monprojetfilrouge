@@ -84,6 +84,6 @@ class __TwigTemplate_96e02df30e171de1e31e1eae67bc650bb7aa1af5934843b778f846bfdfc
     {{ form_widget(form) }}
     <button class=\"btn\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-", "user/_form.html.twig", "/home/seynabou/my-symfony-api/monprojetfilrouge/templates/user/_form.html.twig");
+", "user/_form.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/user/_form.html.twig");
     }
 }

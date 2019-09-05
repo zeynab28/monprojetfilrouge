@@ -140,6 +140,6 @@ class __TwigTemplate_710513052b5a9dbc1bbc74f7fcbd2743e6a9bc8be89bce87514fd0923bc
 
     {{ include('transaction/_delete_form.html.twig') }}
 {% endblock %}
-", "transaction/edit.html.twig", "/home/seynabou/Documents/neldamoney_solo/templates/transaction/edit.html.twig");
+", "transaction/edit.html.twig", "/home/seynabou/Documents/symfony-api/monprojetfilrouge/templates/transaction/edit.html.twig");
     }
 }
