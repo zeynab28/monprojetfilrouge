@@ -47,7 +47,7 @@ public function __construct(UserPasswordEncoderInterface $passwordEncoder)
 //             if($form->isSubmitted() && $form->isValid())
 // {
     
-            $utilisateur->setRoles(["ROLE_CAISSIER"]);
+            $utilisateur->setRoles(["ROLE_USER"]);
             $utilisateur->setUpdatedAt(new \DateTime());
             $utilisateur->setImageFile($file);
             $utilisateur->setPassword($passwordEncoder->encodePassword($utilisateur,
@@ -166,7 +166,7 @@ public function __construct(UserPasswordEncoderInterface $passwordEncoder)
 
     
      /**
-    * @Route("/user/bloquer_user/{id}", name="status",methods={"PUT"})
+    * @Route("/user/bloquer_user/{id}", name="status",methods={"GET"})
     */
     public function status(User $user)
     {
@@ -185,4 +185,16 @@ public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     }
  
    
+    /**
+     * @Route("/liste_user", name="list_user", methods={"GET"})
+     */
+    public function index(UserRepository $user, SerializerInterface $serializer)
+    {
+        $con=$this->getUser();
+        $users = $user->findBy(['partenaire'=>$con->getPartenaire()]);
+        $data = $serializer->serialize($users, 'json');
+        return new Response($data, 200, [
+            'Content-Type' => 'application/json'
+        ]);
+    }  
 }

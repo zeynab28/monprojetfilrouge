@@ -26,6 +26,7 @@ return [
         '/api/register' => [[['_route' => 'user_register', '_controller' => 'App\\Controller\\UserController::register'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/api/acces' => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], null, ['GET' => 0], null, false, false, null]],
         '/api/login_check' => [[['_route' => 'login', '_controller' => 'App\\Controller\\UserController::login'], null, ['POST' => 0], null, false, false, null]],
+        '/api/liste_user' => [[['_route' => 'list_user', '_controller' => 'App\\Controller\\UserController::index'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -114,7 +115,7 @@ return [
         194 => [[['_route' => 'transactions_show', '_controller' => 'App\\Controller\\TransactionsController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         207 => [[['_route' => 'transactions_edit', '_controller' => 'App\\Controller\\TransactionsController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         215 => [[['_route' => 'transactions_delete', '_controller' => 'App\\Controller\\TransactionsController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        258 => [[['_route' => 'status', '_controller' => 'App\\Controller\\UserController::status'], ['id'], ['PUT' => 0], null, false, true, null]],
+        258 => [[['_route' => 'status', '_controller' => 'App\\Controller\\UserController::status'], ['id'], ['GET' => 0], null, false, true, null]],
         294 => [[['_route' => 'api_entrypoint', '_controller' => 'api_platform.action.entrypoint', '_format' => '', '_api_respond' => 'true', 'index' => 'index'], ['index', '_format'], null, null, false, true, null]],
         328 => [[['_route' => 'api_doc', '_controller' => 'api_platform.action.documentation', '_format' => '', '_api_respond' => 'true'], ['_format'], null, null, false, true, null]],
         362 => [
