@@ -14,7 +14,8 @@ class BeneficiaireType extends AbstractType
         $builder
             ->add('nomben')
             ->add('telben')
-            ->add('cni')
+            ->add('prenomben')
+            
         ;
     }
 

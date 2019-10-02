@@ -5,90 +5,28 @@ namespace App\Controller;
 use App\Entity\Transactions;
 use App\Form\TransactionsType;
 use App\Repository\TransactionsRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/transactions")
+ * @Route("/api")
  */
 class TransactionsController extends AbstractController
 {
     /**
-     * @Route("/", name="transactions_index", methods={"GET"})
+     * @Route("/liste_trans", name="list_trans", methods={"GET"})
      */
-    public function index(TransactionsRepository $transactionsRepository): Response
+    public function index(TransactionsRepository $tra, SerializerInterface $serializer)
     {
-        return $this->render('transactions/index.html.twig', [
-            'transactions' => $transactionsRepository->findAll(),
+        $transact = $tra->findAll();
+        $data = $serializer->serialize($transact, 'json');
+
+        return new Response($data, 200, [
+            'Content-Type' => 'application/json'
         ]);
-    }
-
-    /**
-     * @Route("/new", name="transactions_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
-    {
-        $transaction = new Transactions();
-        $form = $this->createForm(TransactionsType::class, $transaction);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($transaction);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('transactions_index');
-        }
-
-        return $this->render('transactions/new.html.twig', [
-            'transaction' => $transaction,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/{id}", name="transactions_show", methods={"GET"})
-     */
-    public function show(Transactions $transaction): Response
-    {
-        return $this->render('transactions/show.html.twig', [
-            'transaction' => $transaction,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}/edit", name="transactions_edit", methods={"GET","POST"})
-     */
-    public function edit(Request $request, Transactions $transaction): Response
-    {
-        $form = $this->createForm(TransactionsType::class, $transaction);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('transactions_index');
-        }
-
-        return $this->render('transactions/edit.html.twig', [
-            'transaction' => $transaction,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/{id}", name="transactions_delete", methods={"DELETE"})
-     */
-    public function delete(Request $request, Transactions $transaction): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$transaction->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($transaction);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('transactions_index');
-    }
+    } 
+    
 }

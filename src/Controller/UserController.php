@@ -184,11 +184,25 @@ public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     return new JsonResponse('user bloqué/débloqué');
     }
  
+
+
+    /**
+     * @Route("/liste_all", name="list_allprestataire", methods={"GET"})
+     */
+    public function index(UserRepository $use, SerializerInterface $serializer)
+    {
+        $usa = $use->findAll();
+        $data = $serializer->serialize($usa, 'json');
+
+        return new Response($data, 200, [
+            'Content-Type' => 'application/json'
+        ]);
+    }
    
     /**
      * @Route("/liste_user", name="list_user", methods={"GET"})
      */
-    public function index(UserRepository $user, SerializerInterface $serializer)
+    public function liste(UserRepository $user, SerializerInterface $serializer)
     {
         $con=$this->getUser();
         $users = $user->findBy(['partenaire'=>$con->getPartenaire()]);

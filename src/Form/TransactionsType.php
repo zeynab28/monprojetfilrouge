@@ -24,6 +24,7 @@ class TransactionsType extends AbstractType
             ->add('comsystem')
             ->add('frais')
             ->add('type')
+            ->add('cni')
             ->add('expediteur', EntityType::class,[
                 'class'=> Expediteur::class,
                 'choice_label'=> 'expediteur_id'

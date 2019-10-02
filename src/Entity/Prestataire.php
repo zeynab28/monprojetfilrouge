@@ -26,17 +26,17 @@ class Prestataire
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $nom;
+    private $nompart;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adresse;
+    private $adressemail;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $statut;
+    private $statutpart;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -76,38 +76,38 @@ class Prestataire
         return $this;
     }
 
-    public function getNom(): ?string
+    public function getNompart(): ?string
     {
-        return $this->nom;
+        return $this->nompart;
     }
 
-    public function setNom(?string $nom): self
+    public function setNompart(?string $nompart): self
     {
-        $this->nom = $nom;
+        $this->nompart = $nompart;
 
         return $this;
     }
 
-    public function getAdresse(): ?string
+    public function getAdressemail(): ?string
     {
-        return $this->adresse;
+        return $this->adressemail;
     }
 
-    public function setAdresse(string $adresse): self
+    public function setAdressemail(string $adressemail): self
     {
-        $this->adresse = $adresse;
+        $this->adresse = $adressemail;
 
         return $this;
     }
 
-    public function getStatut(): ?string
+    public function getStatutpart(): ?string
     {
-        return $this->statut;
+        return $this->statutpart;
     }
 
-    public function setStatut(?string $statut): self
+    public function setStatutpart(?string $statutpart): self
     {
-        $this->statut = $statut;
+        $this->statutpart = $statutpart;
 
         return $this;
     }

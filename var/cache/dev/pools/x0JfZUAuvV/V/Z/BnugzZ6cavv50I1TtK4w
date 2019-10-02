@@ -10,10 +10,10 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
-                '/liste_user',
+                '/liste_all',
             ],
             'name' => [
-                'list_user',
+                'list_allprestataire',
             ],
             'methods' => [
                 [

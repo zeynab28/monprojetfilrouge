@@ -83,6 +83,11 @@ class Transactions
      */
     private $dateretrait;
 
+    /**
+     * @ORM\Column(type="bigint")
+     */
+    private $cni;
+
   
 
     public function getId(): ?int
@@ -242,6 +247,18 @@ class Transactions
     public function setDateretrait(?\DateTimeInterface $dateretrait): self
     {
         $this->dateretrait = $dateretrait;
+
+        return $this;
+    }
+
+    public function getCni(): ?int
+    {
+        return $this->cni;
+    }
+
+    public function setCni(int $cni): self
+    {
+        $this->cni = $cni;
 
         return $this;
     }

@@ -2,17 +2,18 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Depot;
 use App\Entity\Compte;
-use App\Entity\User;
 use App\Form\DepotType;
-use App\Repository\CompteRepository;
 use App\Repository\DepotRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\CompteRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 /**
  * @Route("/api")
  */
@@ -47,5 +48,18 @@ class DepotController extends AbstractController
       
         
        
+    }
+
+    /**
+     * @Route("/liste_depot", name="list_depot", methods={"GET"})
+     */
+    public function index(DepotRepository $dep, SerializerInterface $serializer)
+    {
+        $depots = $dep->findAll();
+        $data = $serializer->serialize($depots, 'json');
+
+        return new Response($data, 200, [
+            'Content-Type' => 'application/json'
+        ]);
     }
 }

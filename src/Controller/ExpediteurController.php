@@ -81,6 +81,8 @@ class ExpediteurController extends AbstractController
 
             $compte=$user->getCompte();
             $envoi->setUser($user);
+            $envoi->setExpediteur($expediteur);
+            $envoi->setBeneficiaire($beneficiaire);
 
          
             if($compte->getSolde() > $envoi->getMontant() ){

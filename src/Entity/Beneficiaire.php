@@ -31,14 +31,14 @@ class Beneficiaire
     private $telben;
 
     /**
-     * @ORM\Column(type="bigint")
-     */
-    private $cni;
-
-    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Transactions", mappedBy="beneficiaire")
      */
     private $transactions;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $prenomben;
 
     public function __construct()
     {
@@ -74,18 +74,7 @@ class Beneficiaire
         return $this;
     }
 
-    public function getCni(): ?int
-    {
-        return $this->cni;
-    }
-
-    public function setCni(int $cni): self
-    {
-        $this->cni = $cni;
-
-        return $this;
-    }
-
+    
     /**
      * @return Collection|Transactions[]
      */
@@ -113,6 +102,18 @@ class Beneficiaire
                 $transaction->setBeneficiaire(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPrenomben(): ?string
+    {
+        return $this->prenomben;
+    }
+
+    public function setPrenomben(string $prenomben): self
+    {
+        $this->prenomben = $prenomben;
 
         return $this;
     }

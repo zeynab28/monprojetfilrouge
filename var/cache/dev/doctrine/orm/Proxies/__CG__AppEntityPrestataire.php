@@ -64,10 +64,10 @@ class Prestataire extends \App\Entity\Prestataire implements \Doctrine\ORM\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'rs', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'adresse', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'statut', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'ninea', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'users', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'comptes'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'rs', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'nompart', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'adressemail', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'statutpart', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'ninea', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'users', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'comptes'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'rs', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'adresse', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'statut', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'ninea', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'users', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'comptes'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'rs', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'nompart', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'adressemail', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'statutpart', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'ninea', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'users', '' . "\0" . 'App\\Entity\\Prestataire' . "\0" . 'comptes'];
     }
 
     /**
@@ -213,67 +213,67 @@ class Prestataire extends \App\Entity\Prestataire implements \Doctrine\ORM\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getNom(): ?string
+    public function getNompart(): ?string
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNom', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNompart', []);
 
-        return parent::getNom();
+        return parent::getNompart();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setNom(?string $nom): \App\Entity\Prestataire
+    public function setNompart(?string $nompart): \App\Entity\Prestataire
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNom', [$nom]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNompart', [$nompart]);
 
-        return parent::setNom($nom);
+        return parent::setNompart($nompart);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getAdresse(): ?string
+    public function getAdressemail(): ?string
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAdresse', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAdressemail', []);
 
-        return parent::getAdresse();
+        return parent::getAdressemail();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setAdresse(string $adresse): \App\Entity\Prestataire
+    public function setAdressemail(string $adressemail): \App\Entity\Prestataire
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAdresse', [$adresse]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAdressemail', [$adressemail]);
 
-        return parent::setAdresse($adresse);
+        return parent::setAdressemail($adressemail);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getStatut(): ?string
+    public function getStatutpart(): ?string
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStatut', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStatutpart', []);
 
-        return parent::getStatut();
+        return parent::getStatutpart();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setStatut(?string $statut): \App\Entity\Prestataire
+    public function setStatutpart(?string $statutpart): \App\Entity\Prestataire
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStatut', [$statut]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStatutpart', [$statutpart]);
 
-        return parent::setStatut($statut);
+        return parent::setStatutpart($statutpart);
     }
 
     /**

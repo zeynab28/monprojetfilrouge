@@ -13,9 +13,9 @@ class PrestataireType extends AbstractType
     {
         $builder
             ->add('rs')
-            ->add('nom')
-            ->add('adresse')
-            ->add('statut')
+            ->add('nompart')
+            ->add('adressemail')
+            ->add('statutpart')
             ->add('ninea')
         ;
     }
